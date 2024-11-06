@@ -1,0 +1,679 @@
+Blissful Journeys
+MID TERM REPORT 1
+          OF PROJECT – II (PROJ - CSE - 423G)
+
+         BACHELOR OF TECHNOLOGY
+         COMPUTER ENGINEERING
+SUBMITTED TO
+MAHARSHI DAYANAND UNIVERSITY, ROHTAK
+ 
+SUBMITTED BY
+ 
+
+Name										Registration no. 
+Shradha Aggarwal								2010071181
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUPERVISOR
+     Dr. Mukta Goel
+                                      (Assistant Professor, CE Department)
+            
+
+
+THE TECHNOLOGICAL INSTITUTE OF TEXTILE & SCIENCES, BHIWANI(HARYANA)
+2024-2025
+
+
+Vision of the Institute
+
+To Become Excellent Knowledge Enterprise.
+Mission of the Institution
+Creation Of Centre Of Excellence For Learning & Research In Engineering And Technology.
+
+Vision of the department
+To Produce Professionally Excellent, Knowledgeable, Globally Competitive and Socially Responsible Computer Engineers and Entrepreneurs.
+
+Mission of the department
+1.	To provide quality education to students of computer engineering.
+2.	To establish an Industry Institute interaction, participation and collaboration to various job- oriented skills in computer engineering.
+3.	To build human values, social values, entrepreneurship skills and professional ethics among the IT technocrats.
+4.	To focus on innovative and latest development of technologies by engaging in various research areas.
+
+
+                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TABLE OF CONTENTS
+
+  Sr No.      Contents     							    Page No.
+1.	              ABSTRACT    								1
+2.	              OBJECTIVE							            2
+3.	             ACCOMPLISHED WORK						3-5
+4.	             FACILITIES AND TECHNOLOGIES REQUIRED			6
+5.	              REFERENCES                      						7
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ABSTRACT
+Travel booking behaviour has changed substantially over the past two decades. The emergence of new technology and online intermediaries has provided travellers with the flexibility to book up until the date of stay. This has created a fast-paced, dynamic booking environment that disrupts traditional revenue management strategies focused on pricing and allocating rooms based on the time of purchase. The study explores the joint effects of technology and the economy on booking window lead times. It also evaluates a range of forecasting techniques and the importance of utilizing the booking curve for forecasting in dynamic booking environments.
+It discusses how the traditional approach of utilizing travel agents and booking ahead has evolved into a fast-paced, last-minute booking environment, affecting revenue management in areas such as forecasting, pricing, and online travel agency inventory allocations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OBJECTIVES
+
+1. User-Friendly Interface
+•	Intuitive Design: Ensure the system's interface is easy to navigate for users with varying levels of technical expertise.
+•	Responsive Design: Implement a responsive design that works well on different devices, including desktops, tablets, and smartphones.
+•	Search and Booking: Provide straightforward search functionalities for flights, hotels, and car rentals, with clear booking processes.
+2. Core Functionality
+•	Flight Booking: Allow users to search for and book flights, view flight details, and manage reservations.
+•	Hotel Booking: Enable users to search for hotels, compare options, and make bookings.
+•	Car Rentals: Offer functionality for users to search and book rental cars.
+•	Itinerary Management: Provide features for users to view and manage their travel itineraries.
+3. Performance and Scalability
+•	Efficient Code: Write efficient and optimized code to handle large volumes of data and user traffic.
+•	Scalability: Design the system to handle increased load as the number of users grows.
+•	Response Time: Ensure fast response times for user interactions and queries.
+
+
+
+
+
+
+
+
+
+
+
+ACCOMPLISHED WORK
+Project Overview 
+ Create a software application that automates the process of reserving travel-related services. It integrates multiple services and features to create a unified platform for users to plan their trips.
+Database Normalization 
+Normalization is a database design technique that reduces data redundancy and eliminates undesirable characteristics like insertion, update and Deletion Anomalies. Normalization rule divides larger tables into smaller tables and link them using relationships. The purpose of Normalization is to eliminate redundant (repetitive) data and ensure data is stored logically.
+ 
+Data Flow Diagram (DFD)
+A data flow diagram is graphical tool used to describe and analyze movement of data through a system. These are the central tool and the basis from which the other components are developed. The transformation of data from input to output, through processed, may be described logically and independently of physical components associated with the system. These are known as the logical data flow diagrams. The physical data flow diagrams show the actual implements and movement of data between people, departments and workstations.
+DFD Level 0
+ 
+
+DFD Level 1
+ 
+
+ER Diagram
+The relation upon the system is structure through a conceptual ER-Diagram, which not only specifics the existential entities but also the standard relations through which the system exists and the cardinalities that are necessary for the system state to continue.
+  
+FACILITIES AND TECHNOLOGIES REQUIRED
+
+1. Development Environment
+•	Computers: High-performance computers for developers, capable of running development tools and testing environments.
+•	Development Tools: Integrated Development Environments (IDEs) like PyCharm, Visual Studio Code, or Sublime Text.
+
+2.  Server Infrastructure
+•	Development Servers: For testing and development purposes.
+•	Production Servers: For hosting the live application. This can be on physical servers or cloud-based services.
+
+3.  Programming Languages and Frameworks
+•	Python: For backend development.
+•	Web Frameworks: Django or Flask for building the backend application.
+•	Frontend Technologies: HTML, CSS, JavaScript, and frameworks/libraries like React, Angular, or Vue.js.
+
+4. Database Systems
+•	Relational Databases: PostgreSQL, MySQL, or SQLite for storing structured data.
+•	NoSQL Databases: MongoDB or DynamoDB for handling unstructured or semi-structured data.
+
+5. APIs and Integrations
+•	Flight and Hotel APIs: To fetch real-time data on flights, hotels, and car rentals. Examples include Amadeus, Sabre, or Travelport APIs.
+•	Payment Gateways: Integration with payment processors like Stripe, PayPal, or Braintree for handling transactions.
+
+
+
+
+REFERENCES
+1.	Travel Management System Dataflow Diagram (DFD) Academic Projects (freeprojectz.com)
+2.	DBMS Normalization: 1NF, 2NF, 3NF Database Example (guru99.com)
+3.	Travel management system - Entity-relationship diagram example | Gleek
+4.	(PDF) A SURVEY ON TOURIST TRIP PLANNING SYSTEMS (researchgate.net)
+5.	https://news.booking.com/en-in/bookingcom-shares-insight-into-what-indian-travellers-expect-from-the-industry-post-pandemic/
+
+
+Blissful Journeys
+MID TERM REPORT II
+          OF PROJECT – II (PROJ - CSE - 423G)
+
+         BACHELOR OF TECHNOLOGY
+         COMPUTER ENGINEERING
+SUBMITTED TO
+MAHARSHI DAYANAND UNIVERSITY, ROHTAK
+ 
+SUBMITTED BY
+ 
+
+Name										Registration no. 
+Shradha Aggarwal								2010071181
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUPERVISOR
+     Dr. Mukta Goel
+                                      (Assistant Professor, CE Department)
+            
+
+
+THE TECHNOLOGICAL INSTITUTE OF TEXTILE & SCIENCES, BHIWANI(HARYANA)
+2024-2025
+
+
+Vision of the Institute
+
+To Become Excellent Knowledge Enterprise.
+Mission of the Institution
+Creation Of Centre Of Excellence For Learning & Research In Engineering And Technology.
+
+Vision of the department
+To Produce Professionally Excellent, Knowledgeable, Globally Competitive and Socially Responsible Computer Engineers and Entrepreneurs.
+
+Mission of the department
+1.	To provide quality education to students of computer engineering.
+2.	To establish an Industry Institute interaction, participation and collaboration to various job- oriented skills in computer engineering.
+3.	To build human values, social values, entrepreneurship skills and professional ethics among the IT technocrats.
+4.	To focus on innovative and latest development of technologies by engaging in various research areas.
+
+
+                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TABLE OF CONTENTS
+
+  Sr No.      Contents     							    Page No.
+1.	              ABSTRACT    								1
+2.	              OBJECTIVE							            2
+3.	             ACCOMPLISHED WORK						3-5
+4.	             FACILITIES AND TECHNOLOGIES REQUIRED			6
+5.	              REFERENCES                      						7
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ABSTRACT
+Travel booking behaviour has changed substantially over the past two decades. The emergence of new technology and online intermediaries has provided travellers with the flexibility to book up until the date of stay. This has created a fast-paced, dynamic booking environment that disrupts traditional revenue management strategies focused on pricing and allocating rooms based on the time of purchase. The study explores the joint effects of technology and the economy on booking window lead times. It also evaluates a range of forecasting techniques and the importance of utilizing the booking curve for forecasting in dynamic booking environments.
+It discusses how the traditional approach of utilizing travel agents and booking ahead has evolved into a fast-paced, last-minute booking environment, affecting revenue management in areas such as forecasting, pricing, and online travel agency inventory allocations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OBJECTIVES
+
+1. User-Friendly Interface
+•	Intuitive Design: Ensure the system's interface is easy to navigate for users with varying levels of technical expertise.
+•	Responsive Design: Implement a responsive design that works well on different devices, including desktops, tablets, and smartphones.
+•	Search and Booking: Provide straightforward search functionalities for flights, hotels, and car rentals, with clear booking processes.
+2. Core Functionality
+•	Flight Booking: Allow users to search for and book flights, view flight details, and manage reservations.
+•	Hotel Booking: Enable users to search for hotels, compare options, and make bookings.
+•	Car Rentals: Offer functionality for users to search and book rental cars.
+•	Itinerary Management: Provide features for users to view and manage their travel itineraries.
+3. Performance and Scalability
+•	Efficient Code: Write efficient and optimized code to handle large volumes of data and user traffic.
+•	Scalability: Design the system to handle increased load as the number of users grows.
+•	Response Time: Ensure fast response times for user interactions and queries.
+
+
+
+
+
+
+
+
+
+
+
+ACCOMPLISHED WORK
+Project Overview 
+ Create a software application that automates the process of reserving travel-related services. It integrates multiple services and features to create a unified platform for users to plan their trips.
+ 
+Bus Booking:- A bus booking system not only simplifies the travel process for passengers but also enhances operational efficiency for bus operators. By leveraging technology, this system meets the growing demand for convenient and reliable transportation solutions, paving the way for a more connected and accessible travel experience.
+ 
+Train booking:- A train booking system not only transforms the way passengers plan their journeys but also enhances the operational efficiency of rail service providers. By leveraging modern technology, this system meets the increasing demand for accessible and reliable transportation, fostering a more connected travel experience for all.
+ 
+
+Flight booking:- A flight booking system revolutionizes the way travelers plan and book their air travel. By leveraging technology to offer convenience, security, and real-time information, this system meets the demands of today’s global travelers, making air travel more accessible and enjoyable than ever before.
+ 
+
+
+Hotel booking:- A hotel booking system transforms the way travelers find and secure accommodations, leveraging technology to provide convenience, security, and real-time information. By meeting the diverse needs of modern travelers, this system not only enhances the booking process but also contributes to a more enjoyable and memorable travel experience.
+ 
+
+Offers:- 
+ 
+ 
+FACILITIES AND TECHNOLOGIES REQUIRED
+
+1. Development Environment
+•	Computers: High-performance computers for developers, capable of running development tools and testing environments.
+•	Development Tools: Integrated Development Environments (IDEs) like PyCharm, Visual Studio Code, or Sublime Text.
+
+2.  Server Infrastructure
+•	Development Servers: For testing and development purposes.
+•	Production Servers: For hosting the live application. This can be on physical servers or cloud-based services.
+
+3.  Programming Languages and Frameworks
+•	Python: For backend development.
+•	Web Frameworks: Django or Flask for building the backend application.
+•	Frontend Technologies: HTML, CSS, JavaScript, and frameworks/libraries like React, Angular, or Vue.js.
+
+4. Database Systems
+•	Relational Databases: PostgreSQL, MySQL, or SQLite for storing structured data.
+•	NoSQL Databases: MongoDB or DynamoDB for handling unstructured or semi-structured data.
+
+5. APIs and Integrations
+•	Flight and Hotel APIs: To fetch real-time data on flights, hotels, and car rentals. Examples include Amadeus, Sabre, or Travelport APIs.
+•	Payment Gateways: Integration with payment processors like Stripe, PayPal, or Braintree for handling transactions.
+
+
+
+
+REFERENCES
+1.	Travel Management System Dataflow Diagram (DFD) Academic Projects (freeprojectz.com)
+2.	DBMS Normalization: 1NF, 2NF, 3NF Database Example (guru99.com)
+3.	Travel management system - Entity-relationship diagram example | Gleek
+4.	(PDF) A SURVEY ON TOURIST TRIP PLANNING SYSTEMS (researchgate.net)
+5.	https://news.booking.com/en-in/bookingcom-shares-insight-into-what-indian-travellers-expect-from-the-industry-post-pandemic/
+
+Blissful Journeys
+SYNOPSIS
+          OF PROJECT – II (PROJ - CSE - 423G)
+
+         BACHELOR OF TECHNOLOGY
+         COMPUTER ENGINEERING
+SUBMITTED TO
+MAHARSHI DAYANAND UNIVERSITY, ROHTAK
+ 
+SUBMITTED BY
+ 
+
+Name										Registration no. 
+Shradha Aggarwal								2010071181
+
+
+
+
+
+
+
+
+
+
+
+
+
+SUPERVISOR
+     Dr. Mukta Goel
+                                      (Assistant Professor, CE Department)
+            
+
+
+THE TECHNOLOGICAL INSTITUTE OF TEXTILE & SCIENCES, BHIWANI(HARYANA)
+2024-2025
+
+
+Vision of the Institute
+
+To Become Excellent Knowledge Enterprise.
+Mission of the Institution
+Creation Of Centre Of Excellence For Learning & Research In Engineering And Technology.
+
+Vision of the department
+To Produce Professionally Excellent, Knowledgeable, Globally Competitive and Socially Responsible Computer Engineers and Entrepreneurs.
+
+Mission of the department
+1.	To provide quality education to students of computer engineering.
+2.	To establish an Industry Institute interaction, participation and collaboration to various job- oriented skills in computer engineering.
+3.	To build human values, social values, entrepreneurship skills and professional ethics among the IT technocrats.
+4.	To focus on innovative and latest development of technologies by engaging in various research areas.
+
+
+                                       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TABLE OF CONTENTS
+
+  Sr No.      Contents     							    Page No.
+1.	              ABOUT PROJECT 							1-2
+2.	              ABSTRACT    							             3
+3.	             MOTIVATION								 4
+4.	             LITERATURE REVIEW						 5
+5.	             OBJECTIVE                       						 6
+6.	             METHODOLOGY                  						 7-8
+7.	             FACILITIES AND TECHNOLOGIES REQUIRED	   	             9
+8.	             REFERENCES								10
+								
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ABOUT PROJECT
+What is a Blissful Journey?
+Blissful Journey is a software application that automates the process of reserving travel-related services. It integrates multiple services and features to create a unified platform for users to plan their trips. These systems are typically web-based or mobile applications that provide functionalities such as:
+•	Search and Comparison: Users can search for and compare flights, hotels, and car rentals based on various criteria like price, date, and location.
+•	Booking and Reservations: Once users select their preferred options, they can book and reserve flights, accommodations, and other travel services.
+•	Payment Processing: Secure payment gateways are integrated to handle financial transactions.
+•	Itinerary Management: Users can view and manage their travel itineraries, including bookings, changes, and cancellations.
+•	Customer Support: Provide assistance and support for users throughout the booking process and during their travels.
+Importance of Blissful Journey:
+1.	Enhanced User Experience: Travel booking systems offer a streamlined and user-friendly interface that simplifies the complex process of planning and booking travel. Users can easily compare options, make reservations, and manage their travel plans from a single platform.
+2.	Efficiency and Convenience: Automation of the booking process reduces the need for manual intervention, minimizing errors and saving time. Users can access real-time information and make bookings at their convenience, 24/7.
+3.	Integration of Services: By integrating multiple services (flights, hotels, car rentals), these systems provide a comprehensive solution, allowing users to book all aspects of their travel in one place.
+4.	Data Management: Travel booking systems handle large volumes of data related to flights, accommodations, and user preferences. They provide robust data management capabilities, ensuring accurate and up-to-date information.
+5.	Personalization: Advanced systems use data analytics and machine learning to offer personalized recommendations and tailored travel options based on user preferences and past behaviour.
+Components of a Blissful Journey:
+1.	Frontend Interface: The user-facing part of the system, designed to be intuitive and accessible. It includes search forms, booking forms, and user account management features.
+2.	Backend Services: Handles the business logic, including processing user requests, managing bookings, and integrating with external services (e.g., flight and hotel APIs).
+3.	Database Management: Stores user data, booking details, and other critical information. It must be reliable, scalable, and secure.
+4.	APIs and Integrations: Connects with third-party services such as airlines, hotels, and car rental companies to fetch real-time data and facilitate bookings.
+5.	Payment Gateway: Securely processes payments and manages financial transactions between users and service providers.
+6.	Customer Support Tools: Provides channels for users to receive assistance, such as live chat, email support, or helpdesk features.
+
+
+
+
+
+ABSTRACT
+Travel booking behaviour has changed substantially over the past two decades. The emergence of new technology and online intermediaries has provided travellers with the flexibility to book up until the date of stay. This has created a fast-paced, dynamic booking environment that disrupts traditional revenue management strategies focused on pricing and allocating rooms based on the time of purchase. The study explores the joint effects of technology and the economy on booking window lead times. It also evaluates a range of forecasting techniques and the importance of utilizing the booking curve for forecasting in dynamic booking environments.
+It discusses how the traditional approach of utilizing travel agents and booking ahead has evolved into a fast-paced, last-minute booking environment, affecting revenue management in areas such as forecasting, pricing, and online travel agency inventory allocations.
+
+
+
+
+
+
+
+
+            
+
+
+                   
+
+MOTIVATION  
+The motivation behind implementing a Blissful Journey is manifold:
+1.	Content Consumption: Travelers now consume more content than ever before. Recommendations from family and friends remain a top spark for trip planning, but social media plays a significant role, with 77% of travellers seeking inspiration there.
+2.	Efficiency: Implementing an online booking system increases efficiency by automating the booking process, reducing the risk of double bookings or errors.
+3.	New Discoveries: Travellers have diverse reasons for booking trips, such as discovering new places, trying new food, or escaping from daily demands. Understanding these motives helps businesses tailor their offerings to meet travellers’ needs.
+4.	Data Utilization: Technology allows the industry to anticipate and predict traveller preferences through big data analytics and machine learning.
+5.	Transparency on fees and charges: Clearly display any additional fees (such as baggage fees, taxes, or service charges) during the booking process. Transparency builds trust and helps users make informed decision.
+6.	Responsive Design: Travellers expect a consistent experience regardless of the platform they use so that it will ensure booking system works seamlessly across devices (desktop, mobile, tablet).
+
+
+
+
+
+
+
+
+
+
+LITERATURE REVIEW
+
+A literature review on the Blissful Journey reveals several key aspects:
+1.	Security and Trust in Online Booking Systems: Conducting an extensive review of relevant literature, this study analyses online booking systems, e-commerce security, and trust-building strategies .Researchers identify key factors influencing security and trust in online travel bookings[1].
+2.	Hotel Booking Intentions: This comprehensive review covers hotel booking intentions, including variables that influence overall satisfaction (both online and offline).The study examines research published in recognized tourism and hospitality journals from 2000 to 2003[2].
+3.	A Meta-Analysis of Online Travel Booking Services Adoption: Investigating the adoption of online travel booking services, this study explores path relationships and moderating effects based on economic development levels and cultural differences[3].
+4.	The Evolution of Online Booking Systems: Online booking systems have automated internal reservation processes for touristic suppliers and enabled self-service booking for travellers globally[4].
+5.	Flask of python: Flask is a web framework that allows developers to build lightweight web applications quickly and easily with Flask Libraries. It was developed by Armin Ronacher, leader of the International Group of Python Enthusiasts (POCCO). It is basically based on the WSGI toolkit and Jinja2 templating engine[5].
+6.	HTML with CSS: CSS is used to apply the style in the web page which is made up of HTML elements. It describes the look of the webpage.CSS provides various style properties such as background colour, padding, margin, border-colour, and many more, to style a webpage. Each property in CSS has a name-value pair, and each property is separated by a semicolon (;) [6].
+
+
+
+
+OBJECTIVES
+
+1. User-Friendly Interface
+•	Intuitive Design: Ensure the system's interface is easy to navigate for users with varying levels of technical expertise.
+•	Responsive Design: Implement a responsive design that works well on different devices, including desktops, tablets, and smartphones.
+•	Search and Booking: Provide straightforward search functionalities for flights, hotels, and car rentals, with clear booking processes.
+2. Core Functionality
+•	Flight Booking: Allow users to search for and book flights, view flight details, and manage reservations.
+•	Hotel Booking: Enable users to search for hotels, compare options, and make bookings.
+•	Car Rentals: Offer functionality for users to search and book rental cars.
+•	Itinerary Management: Provide features for users to view and manage their travel itineraries.
+3. Performance and Scalability
+•	Efficient Code: Write efficient and optimized code to handle large volumes of data and user traffic.
+•	Scalability: Design the system to handle increased load as the number of users grows.
+•	Response Time: Ensure fast response times for user interactions and queries.
+
+
+
+
+
+
+
+
+
+
+METHODOLOGY
+The methodology of a Blissful journey typically involves several stages:
+1.	Requirement Analysis
+•	Stakeholder Interviews: Engage with users, travel agencies, and other stakeholders to gather requirements.
+•	Competitive Analysis: Study existing systems to identify features and gaps.
+
+     2. System Design
+•	Architectural Design: Decide on the system architecture (e.g., microservices, monolithic).
+•	Database Design: Design the database schema, including tables for users, bookings, flights, hotels, etc.
+•	UI/UX Design: Create wireframes and prototypes to define the user interface and experience.
+•	Technology Stack: Choose technologies and frameworks (e.g., React for frontend, Node.js for backend, SQL/NoSQL for database).
+
+     3. Development
+•	Frontend Development: Implement the user interface, integrating with backend services.
+•	Backend Development: Develop server-side logic, APIs, and integrate with third-party services (e.g., payment gateways, flight and hotel APIs).
+•	Database Implementation: Set up and populate the database based on the design.
+•	Integration: Ensure that all components (frontend, backend, database) work together seamlessly.
+
+     4. Testing
+•	Unit Testing: Test individual components for correct functionality.
+•	Integration Testing: Verify that different parts of the system work together.
+•	System Testing: Conduct end-to-end testing of the entire system.
+
+     5. Deployment
+•	Environment Setup: Prepare production environment (servers, databases).
+•	Deployment Plan: Create a detailed plan for deploying the system, including rollback strategies.
+•	Go Live: Deploy the system and monitor its performance.
+
+     6. Maintenance and Support
+•	Bug Fixes: Address any issues that arise post-deployment.
+•	Updates and Enhancements: Implement new features and improvements based on user feedback.
+•	Monitoring: Continuously monitor system performance and user activity.
+•	User Support: Provide assistance and address user concerns.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FACILITIES AND TECHNOLOGIES REQUIRED
+
+1. Development Environment
+•	Computers: High-performance computers for developers, capable of running development tools and testing environments.
+•	Development Tools: Integrated Development Environments (IDEs) like PyCharm, Visual Studio Code, or Sublime Text.
+
+2.  Server Infrastructure
+•	Development Servers: For testing and development purposes.
+•	Production Servers: For hosting the live application. This can be on physical servers or cloud-based services.
+
+3.  Programming Languages and Frameworks
+•	Python: For backend development.
+•	Web Frameworks: Django or Flask for building the backend application.
+•	Frontend Technologies: HTML, CSS, JavaScript, and frameworks/libraries like React, Angular, or Vue.js.
+
+4. Database Systems
+•	Relational Databases: PostgreSQL, MySQL, or SQLite for storing structured data.
+•	NoSQL Databases: MongoDB or DynamoDB for handling unstructured or semi-structured data.
+
+5. APIs and Integrations
+•	Flight and Hotel APIs: To fetch real-time data on flights, hotels, and car rentals. Examples include Amadeus, Sabre, or Travelport APIs.
+•	Payment Gateways: Integration with payment processors like Stripe, PayPal, or Braintree for handling transactions.
+
+
+
+
+REFERENCES
+
+[1].   https://www.ijfmr.com/papers/2023/5/7334.pdf
+[2]. (PDF) Hotel Booking Intentions: A Literature Review | KHALIL AHMAD - Academia.edu
+[3].   A meta-analysis of online travel booking services adoption: the moderating effects of national or regional economic development level and culture differences | Emerald Insight
+[4].   The Evolution of Online Booking Systems | SpringerLink
+[5].   Flask Tutorial - GeeksforGeeks
+[6].   HTML with CSS - javatpoint
+
+

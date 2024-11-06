@@ -3,11 +3,13 @@ import mysql.connector
 import openai
 # from werkzeug import secure_filename
 from werkzeug.utils import secure_filename
-
+import chat_bot
+from flask_cors import CORS
 
 import datetime
 
 app = Flask(__name__)
+CORS(app)
 app.secret_key = "flash message"
 app.config['SECRET_KEY'] = 'DECORATORS'
 
@@ -597,6 +599,19 @@ def index():
     
 #     bot_reply = response['choices'][0]['message']['content']
 #     return jsonify(reply=bot_reply)
+
+@app.route("/chat", methods=["GET"])
+def ChatWithLLM():
+    return render_template('chat.html')
+        
+@app.route("/chat/query", methods=["POST"])
+def Chatwithllmnow():
+    data = request.json["ques"]
+    ans = chat_bot.ChatWIthLLM(data)
+    return jsonify({"answer": ans})
+    
+    
+    
 
 
 if(__name__ == "__main__"):

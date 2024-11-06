@@ -21,15 +21,6 @@
      
   
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-    <script src="https://cdn.botpress.cloud/webchat/v2.2/webchat.js"></script>
-<script>
-  window.botpressWebChat.init({
-    configUrl: "https://files.bpcontent.cloud/2024/11/03/13/20241103135650-S0ZAKQMU.json",
-    botId: "https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2024/11/03/13/20241103135650-S0ZAKQMU.json",
-    hideWidget: true
-  });
-</script>
-
 
     <style>
         #chatIcon {
@@ -181,7 +172,7 @@
 
 
 <header>
-        <!--Navbar-->
+    <!--Navbar-->
     <section class="section-follow teal darken-2 white-text center">
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -600,14 +591,11 @@
     </footer>
      <!-- Chat Icon -->
   <div id="chatIcon" onclick="toggleBot()">💬</div>
-
   <script>
-    // Function to toggle the Botpress chat
     function toggleBot() {
-      window.botpressWebChat.sendEvent({
-        type: 'show'
-      });
+        // Redirect to chat.html
+window.location.href = 'chat';
     }
-  </script>
+</script>
 </body>
 </html>
