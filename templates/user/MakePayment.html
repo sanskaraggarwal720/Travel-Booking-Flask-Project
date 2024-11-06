@@ -1,0 +1,36 @@
+{%extends "index.html"%}
+
+{%block content%}
+
+
+
+<h1>Add Cake</h1>
+
+<form method="post">
+<table class="table">                
+    <td>Enter Card Number</td>
+        <td><input type="number" name="cardno" placeholder="Card Number"/></td>
+    </tr>
+    <td>Enter CVV Number</td>
+        <td><input type="number" name="cvv" placeholder="CVV"/></td>
+    </tr>
+    <td>Enter Expiry Date</td>
+        <td><input type="text" name="expiry" placeholder="Expiry Date"/></td>
+    <tr>
+        <td>Amount</td>
+        <td>{{session["total"]}} </td>
+    </tr>
+    </tr>
+    <td><input type="submit" class="btn btn-outline-info" value="Make Payment"/></td>
+        <td></td>
+    </tr>
+    
+</table>
+</form>
+
+
+
+
+
+
+{%endblock%}

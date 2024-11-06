@@ -1,0 +1,41 @@
+{%extends "index.html"%}
+
+{%block content%}
+
+<h1>Show  Products!!!</h1>
+<div class="container">
+    <form method="post" action="/AddToCart">
+    <table class="table">
+        
+        <tr>
+            <th>Pid</th>  <td>{{prd[0]}}
+                <input type="hidden" value="{{prd[0]}}" name="pid"/>
+            </td> </tr>
+            <tr><th>Pname</th><td>{{prd[1]}} 
+                <input type="hidden" name="pname" value="{{prd[1]}}"/>  
+            </td></tr>
+            <tr><th>Price</th><td>{{prd[2]}}
+                <input type="hidden" name="price" value="{{prd[2]}}"/>  
+            </td></tr>
+            <tr>
+                <th>Seats</th>
+                <td>
+                    <select name="qty">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><th>Image</th><td><img src="../static/images/{{prd[3]}}" height="102" width="130"/></td>
+        </tr>
+        <tr><td><input class="btn  btn-outline-info" type="submit" value="Add To Cart"/></td><td></td></tr>
+            
+    </table>
+</form>
+</div>
+
+
+{%endblock%}
