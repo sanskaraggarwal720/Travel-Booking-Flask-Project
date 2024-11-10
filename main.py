@@ -609,9 +609,100 @@ def Chatwithllmnow():
     data = request.json["ques"]
     ans = chat_bot.ChatWIthLLM(data)
     return jsonify({"answer": ans})
-    
-    
-    
+
+# bus details  
+@app.route("/ShowProducts/1", methods=["POST"])
+def show_products_bus():
+    # Sample product data
+    products = [
+        (1, 'Bus A', 100),
+        (2, 'Bus B', 200),
+        (3, 'Bus C', 300),
+        # Add more products as needed
+    ]
+    return render_template('/user/ShowProducts.html', prds=products)
+
+
+# train details
+@app.route("/ShowProducts/2", methods=["POST"])
+def show_products_train():
+    # Sample product data
+    products = [
+        (1, 'Kisan Express', 200),
+        (2, 'Gorakhdham Express', 200),
+        (3, 'Kalindi Express', 300),
+        # Add more products as needed
+    ]
+    return render_template('/user/ShowProducts.html', prds=products)
+
+
+# Flights details
+@app.route("/ShowProducts/3", methods=["POST"])
+def show_products_flight():
+    # Sample product data
+    products = [
+        (1, 'Indigo', 2000),
+        (2, 'Spice jet', 4000),
+        (3, 'Air India', 10000),
+        # Add more products as needed
+    ]
+    return render_template('/user/ShowProducts.html', prds=products)
+
+
+# Hotels
+@app.route("/ShowProducts/4", methods=["POST"])
+def show_products_hotels():
+    # Sample product data
+    products = [
+        (1, 'Noor Mahal, Karnal', 4000),
+        (2, 'HSB Grand, Bhiwani', 5500),
+        (3, 'Baya Guest house, Bhiwani', 10499),
+        # Add more products as needed
+    ]
+    return render_template('/user/ShowProducts.html', prds=products)
+
+
+
+@app.route('/ViewDetails/1')
+def seats():
+    seat_data = {
+    'pid': 1,
+    'pname': 'Sample Product',
+    'price': 100,
+    'details': 'This is a sample product description.',
+    # 'image': 'sample_image.jpg'
+    }
+    # Pass the product data to the template
+    return render_template('/user/ViewDetails.html', prd=seat_data)
+
+# product_data = {
+#     1: {'pid': 1, 'pname': 'Sample Product', 'price': 100, 'details': 'This is a sample product description.', 'seats': 'Aisle 3, Row 5'},
+#     2: {'pid': 2, 'pname': 'Another Product', 'price': 150, 'details': 'Another product description.', 'seats': 'Aisle 4, Row 6'}
+# }
+
+# @app.route('/ViewDetails')
+# def product():
+#     # Pass the product data to the template
+#     return render_template('/user/ViewDetails.html', prd=product_data[1])
+
+# @app.route('/ViewDetails/<int:pid>')
+# def view_details(pid):
+#     # Retrieve product information based on pid
+#     product = product_data.get(pid)
+#     if product:
+#         return render_template('/user/seat_details.html', product=product)
+#     else:
+#         return "Product not found", 404
+
+# @app.route('/AddToCart', methods=['POST'])
+# def add_to_cart():
+#     # Retrieve product data from the form
+#     pid = request.form['pid']
+#     pname = request.form['pname']
+#     price = request.form['price']
+#     qty = request.form['qty']
+#     # Add your logic to handle the cart addition (e.g., store in session or database)
+#     return f"Added {qty} of {pname} to cart!"
 
 
 if(__name__ == "__main__"):

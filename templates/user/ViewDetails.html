@@ -1,21 +1,21 @@
 {%extends "index.html"%}
 
 {%block content%}
-
+<!--
 <h1>Show  Products!!!</h1>
 <div class="container">
     <form method="post" action="/AddToCart">
     <table class="table">
         
         <tr>
-            <th>Pid</th>  <td>{{prd[0]}}
-                <input type="hidden" value="{{prd[0]}}" name="pid"/>
+            <th>Pid</th>  <td>{{prd['pid']}}
+                <input type="hidden" value="{{prd['pid']}}" name="pid"/>
             </td> </tr>
-            <tr><th>Pname</th><td>{{prd[1]}} 
+            <tr><th>Pname</th><td>{{prd['pname']}} 
                 <input type="hidden" name="pname" value="{{prd[1]}}"/>  
             </td></tr>
-            <tr><th>Price</th><td>{{prd[2]}}
-                <input type="hidden" name="price" value="{{prd[2]}}"/>  
+            <tr><th>Price</th><td>{{prd['price']}}
+                <input type="hidden" name="price" value="{{prd['price']}}"/>  
             </td></tr>
             <tr>
                 <th>Seats</th>
@@ -36,6 +36,53 @@
     </table>
 </form>
 </div>
-
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+</head>
+<body>
+    <h1>Show Products!!!</h1>
+    <div class="container">
+        <form method="post" action="/AddToCart">
+            <table class="table">
+                <tr>
+                    <th>Pid</th>
+                    <td>{{ prd['pid'] }}
+                        <input type="hidden" value="{{ prd['pid'] }}" name="pid"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Pname</th>
+                    <td>{{ prd['pname'] }}
+                        <input type="hidden" name="pname" value="{{ prd['pname'] }}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>{{ prd['price'] }}
+                        <input type="hidden" name="price" value="{{ prd['price'] }}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Product Details</th>
+                    <td>{{ prd['details'] }}</td>
+                </tr>
+                <tr>
+                    <td><a href="/ViewDetails/{{ prd['pid'] }}">View Seats</a></td>
+                </tr>
+                <tr>
+                    <td><input class="btn btn-outline-info" type="submit" value="Add To Cart"/></td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
 
 {%endblock%}
+
