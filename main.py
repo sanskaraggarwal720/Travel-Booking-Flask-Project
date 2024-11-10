@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,url_for,redirect,make_response,session,url_for,flash,jsonify
 import mysql.connector
 import openai
+import stripe
 # from werkzeug import secure_filename
 from werkzeug.utils import secure_filename
 import chat_bot
@@ -710,6 +711,27 @@ def seats():
 #     # Add your logic to handle the cart addition (e.g., store in session or database)
 #     return f"Added {qty} of {pname} to cart!"
 
-50
+# Configure Stripe with your secret key
+stripe.api_key = "sk_test_51QJXNNKlP5tBMAytvdmPzbGyZZJxAykU2aUnqGh0RtQXelrA4zrrUasTyhdEBbM2CZNc9XLHyMrhd5MPsPyFn13900KiAgTz7g"
+
+# Example route to render the payment form
+@app.route("/add-cake", methods=["GET", "POST"])
+def add_cake():
+    if request.method == "POST":
+        # Extract form data (e.g., amount)
+        amount = int(session.get("total", 100))  # Replace with actual amount
+        
+        # Create a Stripe PaymentIntent for the payment
+        intent = stripe.PaymentIntent.create(
+            amount=amount * 100,  # Stripe requires amounts in cents
+            currency="usd",  # Adjust currency as needed
+            payment_method_types=["card"]
+        )
+
+        # Return client secret to use in frontend JavaScript for secure payment
+        return render_template("confirm_payment.html", client_secret=intent.client_secret)
+
+    # Render the payment form for the GET request
+    return render_template("add_cake.html")
 if(__name__ == "__main__"):
     app.run(debug=True)
