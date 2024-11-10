@@ -6,6 +6,10 @@ from werkzeug.utils import secure_filename
 import chat_bot
 from flask_cors import CORS
 
+from flask import flash, redirect, render_template, request, session, url_for
+from werkzeug.security import generate_password_hash, check_password_hash
+import mysql.connector
+
 import datetime
 
 app = Flask(__name__)
@@ -150,83 +154,85 @@ def displayCookie():
     uname = request.cookies["uname"]
     return "Hello "+uname
 
-
-@app.route("/login", methods = ["GET","POST"])
+#login
+@app.route("/login", methods=["GET", "POST"])
 def login():
-    if(request.method=="GET"):
-        return render_template("/login/login.html")
+    if request.method == "GET":
+        return render_template("login/login.html")
     else:
-        username = request.form["username"]
+        email = request.form["email"]  # Changed from username to email
         password = request.form["password"]
-        con = mysql.connector.connect(host="localhost",user="root",passwd="Shradha720@",database="deepak")
+        
+        con = mysql.connector.connect(host="localhost", user="root", passwd="Shradha720@", database="deepak")
         try:
             mycursor = con.cursor()
-            mycursor.execute(f"SELECT password,username FROM account where email = '{username}'")
+            mycursor.execute("SELECT password, username FROM account WHERE email = %s", (email,))
             myresult = mycursor.fetchone()
-            if(myresult[0]==password):
+            
+            if myresult and myresult[0] == password:
                 session["login"] = True
-                session["username"] = myresult[0]
-                session["user"]=myresult[1]
-                flash("logged in Successfully!!","success")
-                return redirect(url_for('home'))                  
+                session["username"] = myresult[1]
+                flash("Logged in successfully!", "success")
+                return redirect(url_for('home'))
             else:
                 session["login"] = False
                 session["username"] = ''
-                flash("invalid username or password!!","danger")
+                flash("Invalid email or password!", "danger")
                 return redirect(url_for('login'))
         
         finally:
             con.close()
 
 
-@app.route("/register",methods=["GET","POST"])
+
+
+@app.route("/register", methods=["GET", "POST"])
 def register():
-    if(request.method=="GET"):
+    if request.method == "GET":
         return render_template("/login/register.html")
     else:
         username = request.form["username"]
-        email = request.form["email"]   
-        MobileNumber = request.form["phone"]
+        email = request.form["email"]
+        MobileNumber = request.form["MobileNumber"]
         Sex = request.form["sex"]
-        password = request.form["password"]
-        con = mysql.connector.connect(host="localhost",user="root",passwd="Shradha720@",database="deepak")    
-        try:        
+        password = request.form["password"]  # Hashing password
+        con = mysql.connector.connect(host="localhost", user="root", passwd="Shradha720@", database="deepak")
+        try:
             mycursor = con.cursor()
-            sql = "insert into account values (%s,%s,%s,%s,%s)"
-            val = (username,email,MobileNumber,Sex ,password)
-            mycursor.execute(sql,val)
-            flash("Registered Successfully","success")
+            sql = "INSERT INTO account (username, email, MobileNumber, sex, password) VALUES (%s, %s, %s, %s, %s)"
+            val = (username, email, MobileNumber, Sex, password)
+            mycursor.execute(sql, val)
+            con.commit()
+            flash("Registered Successfully", "success")
             return redirect(url_for("login"))
         finally:
-            con.close() 
+            con.close()
 
 
-@app.route("/adlogin", methods = ["GET","POST"])
+@app.route("/adlogin", methods=["GET", "POST"])
 def adlogin():
-    if(request.method=="GET"):
+    if request.method == "GET":
         return render_template("/admin/adlogin.html")
     else:
         username = request.form["username"]
         password = request.form["password"]
-        con = mysql.connector.connect(host="localhost",user="root",passwd="Shradha720@",database="deepak")
+        con = mysql.connector.connect(host="localhost", user="root", passwd="Shradha720@", database="deepak")
         try:
             mycursor = con.cursor()
-            mycursor.execute(f"SELECT password FROM admin_account where email = '{username}'")
+            sql = "SELECT password FROM admin_account WHERE email = %s"
+            val = (username,)
+            mycursor.execute(sql, val)
             myresult = mycursor.fetchone()
-            if(myresult[0]==password):
+            if myresult and check_password_hash(myresult[0], password):  # Verifying hashed password
                 session["adlogin"] = True
                 session["username"] = username
-                flash("Admin logged in Successfully","success")
+                flash("Admin logged in Successfully", "success")
                 return redirect(url_for('home'))
             else:
-                session["adlogin"] = False
-                session["username"] = ''
-                flash("invalid Admin username or password!!","danger")
+                flash("Invalid Admin username or password!", "danger")
                 return redirect(url_for('adlogin'))
-              
         finally:
             con.close()
-
 
 @app.route("/Users")
 def Users():
@@ -704,6 +710,6 @@ def seats():
 #     # Add your logic to handle the cart addition (e.g., store in session or database)
 #     return f"Added {qty} of {pname} to cart!"
 
-
+50
 if(__name__ == "__main__"):
     app.run(debug=True)
