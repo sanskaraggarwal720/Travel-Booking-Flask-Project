@@ -48,7 +48,74 @@
 
 
     </style>
-
+    <script>
+        function startRecognition(fieldId) {
+            // Check if the browser supports speech recognition
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                alert("Your browser does not support speech recognition.");
+                return;
+            }
+        
+            // Initialize speech recognition
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+        
+            // Start speech recognition
+            recognition.start();
+        
+            // Handle the result from speech recognition
+            recognition.onresult = (event) => {
+                let speechResult = event.results[0][0].transcript.toLowerCase().trim();
+                console.log("Speech Result: ", speechResult); // Log the result to the console for debugging
+        
+                // Clean the speech result and map it to the available options
+                speechResult = speechResult.replace(/[^a-z\s]/gi, ""); // Remove punctuation
+                const sourceOptions = {
+                    bhiwani:"Bhiwani",
+                    faridabad:"Faridabad",
+                    karnal:"Karnal",
+                    panchkula:"Panchkula",
+                    hisar:"Hisar",
+                    ambala:"Ambala",
+                    rohtak:"Rohtak",
+                    sirsa:"Sirsa",
+                    sonipat:"Sonipat",
+                    panipat:"Panipat"
+                };
+        
+                const destinationOptions = {
+                    gurugram: "Gurugram",
+                    bhiwani:"Bhiwani",
+                    faridabad:"Faridabad",
+                    karnal:"Karnal",
+                    panchkula:"Panchkula",
+                    hisar:"Hisar",
+                    ambala:"Ambala",
+                    rohtak:"Rohtak",
+                    sirsa:"Sirsa",
+                    sonipat:"Sonipat",
+                    panipat:"Panipat"
+                };
+        
+                const options = fieldId === 'to' ? sourceOptions : destinationOptions;
+        
+                // Match the recognized speech with the option
+                if (options[speechResult]) {
+                    document.getElementById(fieldId).value = options[speechResult];
+                } else {
+                    alert(`Couldn't recognize "${speechResult}". Please try again.`);
+                }
+            };
+        
+            recognition.onerror = (event) => {
+                alert("Speech recognition error: " + event.error);
+            };
+        }
+        
+    </script>
 </head>
 
 <body>
@@ -78,25 +145,35 @@
                                             <label>From</label>
                                             <select type="text" class="form-control" id="text" name="From" placeholder="Enter Station name ">
                                                 <option value="" disabled selected>Choose your Source</option>
-                                                <option>PANVEL-PNVL</option>
-                                                <option>KOLHAPUR </option>
-                                                <option>Pune Jn</option>
-                                                <option>Karad Jn</option>
-                                                <option>CSMT Mumbai</option>
-                                                <option>Thane</option>                                        
+                                                <option>Bhiwani</option>
+                                                <option>Faridabad</option>
+                                                <option>Karnal</option>
+                                                <option>Panchkula</option>
+                                                <option>Hisar</option>
+                                                <option>Ambala</option>
+                                                <option>Rohtak</option>
+                                                <option>Sirsa</option>
+                                                <option>Sonipat</option>
+                                                <option>Panipat</option>                                        
                                             </select>
+                                            <i class="fa fa-microphone" onclick="startRecognition('from')" style="margin-left: 8px; cursor: pointer;"></i>
                                         </div>
                                         <div class="form-group">
                                             <label >To</label>
                                             <select type="text" class="form-control" id="text" name="To" placeholder="Enter Station name ">
                                                 <option value="" disabled selected>Choose your Destination</option>
-                                                <option>Pune Jn</option>
-                                                <option>Karad Jn</option>
-                                                <option>CSMT Mumbai</option>
-                                                <option>PANVEL-PNVL</option>
-                                                <option>Thane</option>
-                                                <option>KOLHAPUR </option>                                        
+                                                <option>Bhiwani</option>
+                                                <option>Faridabad</option>
+                                                <option>Karnal</option>
+                                                <option>Panchkula</option>
+                                                <option>Hisar</option>
+                                                <option>Ambala</option>
+                                                <option>Rohtak</option>
+                                                <option>Sirsa</option>
+                                                <option>Sonipat</option>
+                                                <option>Panipat</option>                                        
                                             </select>
+                                            <i class="fa fa-microphone" onclick="startRecognition('to')" style="margin-left: 8px; cursor: pointer;"></i>
                                         </div>
                                         <div class="form-group">
                                             <span class="form-label">Date</span>

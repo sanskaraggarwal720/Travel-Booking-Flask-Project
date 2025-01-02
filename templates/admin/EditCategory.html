@@ -1,22 +1,23 @@
-{%extends "index.html"%}
+{% extends "index.html" %}
 
-{%block content%}
+{% block content %}
 <div class="container">    
-
-    <h1>Add Category</h1>
+    <h1>Edit Category</h1>
     <form method="post">
-<table class="table">
-       <tr>
-           <td>Category Name</td>
-           <td><input type="text" value="{{cat[1]}}" name="cname"/></td>
-       </tr>
-       <tr>
-           <td><input class="btn btn-primary " type="submit" value="Save Category"/></td>
-           <td></td>
-       </tr>
-    
-
-</table>
-</form>
+        <table class="table">
+            <tr>
+                <td>Category ID</td>
+                <td><input type="text" name="cid" value="{{ cat[0] }}" readonly/></td>
+            </tr>
+            <tr>
+                <td>Category Name</td>
+                <td><input type="text" placeholder="Category Name" name="cname" value="{{ cat[1] }}" required/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Update Category"/></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
 </div>
-{%endblock%}
+{% endblock %}

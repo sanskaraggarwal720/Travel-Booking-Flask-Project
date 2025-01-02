@@ -48,70 +48,75 @@
         }
 
     </style>
-
-</head>
-<script>
-    
-    function startRecognition(fieldId) {
-        // Check if the browser supports speech recognition
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-        if (!SpeechRecognition) {
-            alert("Your browser does not support speech recognition.");
-            return;
-        }
-    
-        // Initialize speech recognition
-        const recognition = new SpeechRecognition();
-        recognition.lang = 'en-US';
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
-    
-        // Start speech recognition
-        recognition.start();
-    
-        // Handle the result from speech recognition
-        recognition.onresult = (event) => {
-        
-        let speechResult = event.results[0][0].transcript.toLowerCase().trim();
-        speechResult = speechResult.replace(/[^a-z\s]/gi, ""); // Remove punctuation
-            // Map speech input to the available options
-            const sourceOptions = {
-                kalamboli: "Kalamboli",
-                kharghar: "Kharghar",
-                belapur: "Belapur",
-                vashi: "Vashi",
-                swargate: "Swargate",
-                pimpri: "Pimpri",
-                "pune station": "Pune station"
-            };
-    
-            const destinationOptions = {
-                satara: "Satara",
-                karad: "Karad",
-                belapur: "Belapur",
-                kalamboli: "Kalamboli",
-                akurdi: "Akurdi",
-                vashi: "Vashi",
-                swargate: "Swargate",
-                pimpri: "Pimpri",
-                "pune station": "Pune station"
-            };
-    
-            const options = fieldId === 'from' ? sourceOptions : destinationOptions;
-            
-            // Match the recognized speech with the option
-            if (options[speechResult]) {
-                document.getElementById(fieldId).value = options[speechResult];
-            } else {
-                alert(`Couldn't recognize "${speechResult}". Please try again.`);
+    <script>
+        function startRecognition(fieldId) {
+            // Check if the browser supports speech recognition
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                alert("Your browser does not support speech recognition.");
+                return;
             }
-        };
-    
-        recognition.onerror = (event) => {
-            alert("Speech recognition error: " + event.error);
-        };
-    }
+        
+            // Initialize speech recognition
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+        
+            // Start speech recognition
+            recognition.start();
+        
+            // Handle the result from speech recognition
+            recognition.onresult = (event) => {
+                let speechResult = event.results[0][0].transcript.toLowerCase().trim();
+                console.log("Speech Result: ", speechResult); // Log the result to the console for debugging
+        
+                // Clean the speech result and map it to the available options
+                speechResult = speechResult.replace(/[^a-z\s]/gi, ""); // Remove punctuation
+                const sourceOptions = {
+                    bhiwani:"Bhiwani",
+                    faridabad:"Faridabad",
+                    karnal:"Karnal",
+                    panchkula:"Panchkula",
+                    hisar:"Hisar",
+                    ambala:"Ambala",
+                    rohtak:"Rohtak",
+                    sirsa:"Sirsa",
+                    sonipat:"Sonipat",
+                    panipat:"Panipat"
+                };
+        
+                const destinationOptions = {
+                    gurugram: "Gurugram",
+                    bhiwani:"Bhiwani",
+                    faridabad:"Faridabad",
+                    karnal:"Karnal",
+                    panchkula:"Panchkula",
+                    hisar:"Hisar",
+                    ambala:"Ambala",
+                    rohtak:"Rohtak",
+                    sirsa:"Sirsa",
+                    sonipat:"Sonipat",
+                    panipat:"Panipat"
+                };
+        
+                const options = fieldId === 'to' ? sourceOptions : destinationOptions;
+        
+                // Match the recognized speech with the option
+                if (options[speechResult]) {
+                    document.getElementById(fieldId).value = options[speechResult];
+                } else {
+                    alert(`Couldn't recognize "${speechResult}". Please try again.`);
+                }
+            };
+        
+            recognition.onerror = (event) => {
+                alert("Speech recognition error: " + event.error);
+            };
+        }
+        
     </script>
+</head>
     
 <body>
 
@@ -135,18 +140,20 @@
                                 <div class="modal-body">
                                     <form method="POST"  action="/ShowProducts/1">
                                         <div class="form-group">
-                                            <label  >From</label>
+                                            <label >From</label>
                                            
                                             <select type="text" class="form-control" id="from" name="From" placeholder="Enter your Source">
-                                                <option value="" disabled selected>Choose your Source</option>
-                                                <option>Kalamboli</option>
-                                                <option>Kharghar</option>
-                                                <option>Belapur</option>
-                                                <option>Vashi</option>
-                                                <option>Swargate</option>
-                                                <option>Pimpri</option>
-                                                <option>Pune station</option>
-
+                                                <option value="" disabled selected>Choose your Source</option>                                                
+                                                <option>Bhiwani</option>
+                                                <option>Faridabad</option>
+                                                <option>Karnal</option>
+                                                <option>Panchkula</option>
+                                                <option>Hisar</option>
+                                                <option>Ambala</option>
+                                                <option>Rohtak</option>
+                                                <option>Sirsa</option>
+                                                <option>Sonipat</option>
+                                                <option>Panipat</option>
                                             </select>
                                             <i class="fa fa-microphone" onclick="startRecognition('from')" style="margin-left: 8px; cursor: pointer;"></i>
                                         </div>
@@ -154,18 +161,21 @@
                                             <label >To</label>
                                             <select type="text"  class="form-control" id="to" name="To" placeholder="Enter your Destination">
                                                 <option value="" disabled selected>Choose your Destination</option>
-                                                <option>Satara</option>
-                                                <option>Karad</option>
-                                                <option>Belapur</option>
-                                                <option>Kalamboli</option>
-                                                <option>Akurdi</option>
-                                                <option>Vashi</option>
-                                                <option>Swargate</option>
-                                                <option>Pimpri</option>
-                                                <option>Pune station</option>
+                                                <option>Gurugram</option>
+                                                <option>Bhiwani</option>
+                                                <option>Faridabad</option>
+                                                <option>Karnal</option>
+                                                <option>Panchkula</option>
+                                                <option>Hisar</option>
+                                                <option>Ambala</option>
+                                                <option>Rohtak</option>
+                                                <option>Sirsa</option>
+                                                <option>Sonipat</option>
+                                                <option>Panipat</option>
                                             </select>
                                             <i class="fa fa-microphone" onclick="startRecognition('to')" style="margin-left: 8px; cursor: pointer;"></i>
                                         </div>
+                                        
                                         <div class="form-group">
                                             <span class="form-label">Date</span>
                                             <input class="form-control" name="date" type="date" required>
@@ -200,7 +210,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Super Savings</h4>
                             <p class="card-text">Flat up to Rs.110 | Code: FIRSTBUS</p>
-                            <p class="card-text">Valid till:10th Jan 2020 </p>
+                            <p class="card-text">Valid till:10th Jan 2025 </p>
                             <a href="/offers" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>
@@ -214,7 +224,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Bumper Sale</h4>
                             <p class="card-text">Up to 20% off | Code: SB20</p>
-                            <p class="card-text">Valid till:10th Jan 2020</p>
+                            <p class="card-text">Valid till:10th Jan 2025</p>
                             <a href="/offers" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>
@@ -229,7 +239,7 @@
                         <div class="card-body">
                             <h4 class="card-title">Save Big On Bus Tickets!</h4>
                             <p class="card-text">Up to 15% off. Code: MYBUS</p>
-                            <p class="card-text">Valid till:10th Jan 2020</p>                            
+                            <p class="card-text">Valid till:10th Jan 2025</p>                            
                             <a href="/offers" class="btn btn-primary">Book Now</a>
                         </div>
                     </div>

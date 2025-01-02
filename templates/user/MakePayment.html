@@ -1,40 +1,3 @@
-<!--{%extends "index.html"%}
-
-{%block content%}
-
-
-
-<h1>Add Cake</h1>
-
-<form method="post">
-<table class="table">                
-    <td>Enter Card Number</td>
-        <td><input type="number" name="cardno" placeholder="Card Number"/></td>
-    </tr>
-    <td>Enter CVV Number</td>
-        <td><input type="number" name="cvv" placeholder="CVV"/></td>
-    </tr>
-    <td>Enter Expiry Date</td>
-        <td><input type="text" name="expiry" placeholder="Expiry Date"/></td>
-    <tr>
-        <td>Amount</td>
-        <td>{{session["total"]}} </td>
-    </tr>
-    </tr>
-    <td><input type="submit" class="btn btn-outline-info" value="Make Payment"/></td>
-        <td></td>
-    </tr>
-    
-</table>
-</form>
-
-
-
-
-
-
-{%endblock%}-->
-
 {% extends "index.html" %}
 
 {% block content %}
@@ -65,33 +28,41 @@
 </form>
 
 <!-- Stripe Elements JavaScript for handling payment -->
-<script>
-    // Initialize Stripe with your publishable key
-    const stripe = Stripe("your_publishable_key");
-
-    const elements = stripe.elements();
-    const cardElement = elements.create("card");
-
-    // Mount card element to div
-    cardElement.mount("#card-element");
-
-    // Handle form submission
-    const form = document.getElementById("payment-form");
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-
-        const { error, paymentIntent } = await stripe.confirmCardPayment("{{ client_secret }}", {
-            payment_method: {
-                card: cardElement,
+    <script>
+        // Initialize Stripe with your publishable key
+        const stripe = Stripe("pk_test_51QJXNNKlP5tBMAytwztzhWkYJLvofjQNbBDA8FS1v0PjxHmqhqzzBWQidlkOqaugaFti25rqfj5U4FhHEUR2i7tr00V7307eSU");
+    
+        const elements = stripe.elements();
+        const cardElement = elements.create("card");
+    
+        // Mount card element to div
+        cardElement.mount("#card-element");
+    
+        // Handle form submission
+        const form = document.getElementById("payment-form");
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();  // Prevent default form submission
+    
+            const clientSecret = "{{ client_secret }}";  // Make sure this is rendered correctly
+    
+            if (clientSecret) {
+                const { error, paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
+                    payment_method: {
+                        card: cardElement,
+                    }
+                });
+    
+                if (error) {
+                    alert("Payment failed: " + error.message);
+                } else if (paymentIntent.status === 'succeeded') {
+                    alert("Payment succeeded!");
+                    window.location.href = "/thank-you";  // Redirect to a thank-you page
+                } else {
+                    alert("Payment failed: " + paymentIntent.status);
+                }
+            } else {
+                alert("Client secret is missing or invalid.");
             }
         });
-
-        if (error) {
-            alert("Payment failed: " + error.message);
-        } else {
-            alert("Payment succeeded!");
-            window.location.href = "/thank-you"; // Redirect to a thank-you page
-        }
-    });
-</script>
+    </script>
 {% endblock %}
